@@ -9,37 +9,46 @@
             </div>
         </div>
         <div class="row">
+           <%--<div class="col-md-4"></div> --%> 
             <div class="col-md-4">
-
-            </div>
-            <div class="col-md-8">
                 <div class="mb-3">
                     <label for="" class="form-label text-success">Seller Name</label>
-                    <input type="text" placeholder="Name" autocomplete="off" class="form-control"/>
+                    <input type="text" placeholder="Name" autocomplete="off" runat="server" id="SNameTb" class="form-control"/>
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label text-success">Seller Email</label>
-                    <input type="email" placeholder="Seller's Email" autocomplete="off" class="form-control"/>
+                    <input type="email" placeholder="Seller's Email" autocomplete="off" runat="server" id="EmailTb" class="form-control"/>
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label text-success">Seller Phone</label>
-                    <input type="text" placeholder="Phone Number" autocomplete="off" class="form-control"/>
+                    <input type="text" placeholder="Phone Number" autocomplete="off" runat="server" id="PhoneTb" class="form-control"/>
                 </div>
                 <div class="mb-3">
                     <label for="" class="form-label text-success">Seller Address</label>
-                    <input type="text" placeholder="Address" autocomplete="off" class="form-control"/>
+                    <input type="text" placeholder="Address" autocomplete="off" runat="server" id="AddressTb" class="form-control"/>
+                </div>   
+                <div class="row">
+                    <asp:Label runat = "server" ID="ErrMsg" class="text-danger text-center"></asp:Label>
+                    <div class="col d-grid"><asp:Button Text="Update" id ="Editbtn"  runat="server" CssClass="btn-warning btn-block btn" OnClick="Editbtn_Click"/></div>
+                    <div class="col d-grid"><asp:Button Text="Save"  id ="Savebtn" runat="server" CssClass="btn-success btn-block  btn" OnClick="Savebtn_Click"/></div>
+                    <div class="col d-grid"><asp:Button Text="Delete" id ="Deletebtn" runat="server" CssClass="btn-danger btn-block btn" OnClick="Deletebtn_Click"/></div>
                 </div>
-                
-                
             </div>
-            <div class="row">
-                <div class="col d-grid"><asp:Button Text="Update"  runat="server" CssClass="btn-warning btn-block btn"/></div>
-                <div class="col d-grid"><asp:Button Text="Save"  runat="server" CssClass="btn-success btn-block  btn"/></div>
-                <div class="col d-grid"><asp:Button Text="Delete"  runat="server" CssClass="btn-danger btn-block btn"/></div>
-            </div>
+        <div class="col-md-8">
+             <asp:GridView ID="SellerList" runat="server" class="table" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateSelectButton="True" OnSelectedIndexChanged="AuthorsList_SelectedIndexChanged">
+            <AlternatingRowStyle BackColor="White" />
+            <EditRowStyle BackColor="#7C6F57" />
+            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="teal" Font-Bold="false" ForeColor="White" />
+            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#E3EAEB" />
+            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+            <SortedAscendingCellStyle BackColor="#F8FAFA" />
+            <SortedAscendingHeaderStyle BackColor="#246B61" />
+            <SortedDescendingCellStyle BackColor="#D4DFE1" />
+            <SortedDescendingHeaderStyle BackColor="#15524A" />
+          </asp:GridView>
         </div>
-        <div class="col-md-4">
-             <asp:GridView ID="GridView1" runat="server"></asp:GridView>
-        </div>
+      </div>
     </div>
 </asp:Content>

@@ -27,12 +27,12 @@
                         </div>
                      </div>
                     <div class="mt-3">
-                        <label for="" class="form-label" id="UnameTb">User Name</label>
-                        <input type="text" placeholder="User Name" autocomplete="off" class="form-control"/>
+                        <label for="" class="form-label">User Name</label>
+                        <input type="text" placeholder="User Name" autocomplete="off" class="form-control" id="UnameTb"/>
                     </div>
                     <div class="mt-3">
-                        <label for="" class="form-label" id="PasswordTb">Password</label>
-                        <input type="password" placeholder="Password" autocomplete="off" class="form-control"/>
+                        <label for="" class="form-label">Password</label>
+                        <input type="password" placeholder="Password" autocomplete="off" class="form-control" id="PasswordTb"/>
                     </div>
                     <div class="mt-3 d-grid">
                         <asp:Button Text="Login"  runat="server" CssClass="btn-success btn" ID="LoginBtn" OnClick="LoginBtn_Click"/>
