@@ -17,7 +17,7 @@ namespace BookShop.Views.Admin
         }
         private void ShowSellers()
         {
-            string Query = "Select * from SellerTb";
+            string Query = "Select SellId SellName SellEmail SellPhone SellPass from SellerTb";
             SellerList.DataSource = Con.GetData(Query);
             SellerList.DataBind();
         }
@@ -25,7 +25,7 @@ namespace BookShop.Views.Admin
         {
             try
             {
-                if (SNameTb.Value == "" || EmailTb.Value == "" || PhoneTb.Value == "" || AddressTb.Value == "")
+                if (SNameTb.Value == "" || EmailTb.Value == "" || PhoneTb.Value == "" || PasswordTb.Value == "")
                 {
                     ErrMsg.Text = "Missing Data!!";
                 }
@@ -34,17 +34,17 @@ namespace BookShop.Views.Admin
                     string SName = SNameTb.Value;
                     string SEmail = EmailTb.Value;
                     string SPhone = PhoneTb.Value;
-                    string SAddress = AddressTb.Value;
+                    string SPassword = PasswordTb.Value;
 
                     string Query = "Insert into SellerTb values('{0}', '{1}', '{2}','{3}')";
-                    Query = string.Format(Query, SName, SEmail, SPhone, SAddress);
+                    Query = string.Format(Query, SName, SEmail, SPhone, SPassword);
                     Con.SetData(Query);
                     ShowSellers();
                     ErrMsg.Text = "Seller Inserted!!";
                     SNameTb.Value = "";
                     EmailTb.Value = "";
                     PhoneTb.Value = "";
-                     AddressTb.Value = "";
+                    PasswordTb.Value = "";
                 }
 
             }
@@ -60,7 +60,7 @@ namespace BookShop.Views.Admin
             SNameTb.Value = SellerList.SelectedRow.Cells[2].Text;
             EmailTb.Value = SellerList.SelectedRow.Cells[3].Text;
             PhoneTb.Value = SellerList.SelectedRow.Cells[4].Text;
-            AddressTb.Value = SellerList.SelectedRow.Cells[5].Text;
+            PasswordTb.Value = SellerList.SelectedRow.Cells[5].Text;
             if (SNameTb.Value == "")
             {
                 Key = 0;
@@ -75,7 +75,7 @@ namespace BookShop.Views.Admin
         {
             try
             {
-                if (SNameTb.Value == "" || EmailTb.Value == "" || PhoneTb.Value == "" || AddressTb.Value == "")
+                if (SNameTb.Value == "" || EmailTb.Value == "" || PhoneTb.Value == "" || PasswordTb.Value == "")
                 {
                     ErrMsg.Text = "Missing Data!!";
                 }
@@ -84,17 +84,17 @@ namespace BookShop.Views.Admin
                     string SName = SNameTb.Value;
                     string SEmail = EmailTb.Value;
                     string SPhone = PhoneTb.Value;
-                    string SAddress = AddressTb.Value;
+                    string SPassword = PasswordTb.Value;
 
-                    string Query = "update SellerTb set SName = '{0}', SEmail = '{1}', SPhone = '{2}', SAddress = '{3}' where SellId = {2}";
-                    Query = string.Format(Query, SName, SEmail,SPhone, SAddress, SellerList.SelectedRow.Cells[1].Text);
+                    string Query = "Update SellerTb set SellName = '{0}', SellEmail = '{1}', SellPhone = '{2}', SellPass = '{3}' where SellId = {4}";
+                    Query = string.Format(Query, SName, SEmail,SPhone, SPassword, SellerList.SelectedRow.Cells[1].Text);
                     Con.SetData(Query);
                     ShowSellers();
-                    ErrMsg.Text = "Categories Updated!!";
+                    ErrMsg.Text = "Seller Updated!!";
                     SNameTb.Value = "";
                     EmailTb.Value = "";
                     PhoneTb.Value = "";
-                    AddressTb.Value = "";
+                    PasswordTb.Value = "";
                 }
 
             }
@@ -106,6 +106,35 @@ namespace BookShop.Views.Admin
 
         protected void Deletebtn_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (SNameTb.Value == "" || EmailTb.Value == "" || PhoneTb.Value == "" || PasswordTb.Value == "")
+                {
+                    ErrMsg.Text = "Missing Data!!";
+                }
+                else
+                {
+                    string SName = SNameTb.Value;
+                    string SEmail = EmailTb.Value;
+                    string SPhone = PhoneTb.Value;
+                    string SPassword = PasswordTb.Value;
+
+                    string Query = "delete from SellerTb where SellId = {0}";
+                    Query = string.Format(Query, SellerList.SelectedRow.Cells[1].Text);
+                    Con.SetData(Query);
+                    ShowSellers();
+                    ErrMsg.Text = "Seller Deleted!!";
+                    SNameTb.Value = "";
+                    EmailTb.Value = "";
+                    PhoneTb.Value = "";
+                    PasswordTb.Value = "";
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                ErrMsg.Text = Ex.Message;
+            }
 
         }
     }

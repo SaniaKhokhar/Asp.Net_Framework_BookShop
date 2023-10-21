@@ -9,18 +9,18 @@
          <div class="row">
             <%-- <div class="col-md-4">  </div>--%> 
              <div class="col-md-4">
-                 <div class="mb-3">
+                 <div class="mb-4">
                      <label for="" class="form-label text-success">Author Name</label>
                      <input type="text" placeholder="Title" autocomplete="off" class="form-control" runat="server" id="ANameTb"/>
                  </div>
-                 <div class="mb-3">
+                 <div class="mb-4">
                      <label for="" class="form-label  text-success">Author Gender</label>
                      <asp:DropDownList ID="GenCb" runat="server" class="form-control">
                           <asp:ListItem>Male</asp:ListItem>
                           <asp:ListItem>Female</asp:ListItem>
                      </asp:DropDownList>                 
                  </div>
-                 <div class="mb-3">
+                 <div class="mb-4">
                      <label for="" class="form-label  text-success">Country</label>
                      <asp:DropDownList ID="CountryCb" runat="server" class="form-control">
                          <asp:ListItem>India</asp:ListItem>

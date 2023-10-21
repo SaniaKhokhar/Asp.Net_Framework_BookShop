@@ -27,15 +27,17 @@
                         </div>
                      </div>
                     <div class="mt-3">
-                        <label for="" class="form-label">User Name</label>
-                        <input type="text" placeholder="User Name" autocomplete="off" class="form-control" id="UnameTb"/>
+                        <label for="" class="form-label">Email</label>
+                        <input type="email" placeholder="Your Email here" runat="server" autocomplete="off" class="form-control" id="UnameTb"/>
                     </div>
                     <div class="mt-3">
                         <label for="" class="form-label">Password</label>
-                        <input type="password" placeholder="Password" autocomplete="off" class="form-control" id="PasswordTb"/>
+                        <input type="password" placeholder="Password" runat="server" autocomplete="off" class="form-control" id="PasswordTb"/>
                     </div>
                     <div class="mt-3 d-grid">
-                        <asp:Button Text="Login"  runat="server" CssClass="btn-success btn" ID="LoginBtn" OnClick="LoginBtn_Click"/>
+                        <asp:Label runat = "server" ID="ErrMsg" class="text-danger text-center"></asp:Label><br />
+                        <asp:Button Text="Login"  runat="server" CssClass="btn-success btn" ID="LoginBtn" OnClick="LoginBtn_Click"/><br/>
+                        <a href="Signup.aspx">Don't have an account? Sign up here</></a>
                     </div>
                 </form>
             </div>

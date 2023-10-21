@@ -5,28 +5,28 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                <h3 class="text-center">Manage Sellers</h3>
+                <h3 class="text-center">Manage Users</h3>
             </div>
         </div>
         <div class="row">
            <%--<div class="col-md-4"></div> --%> 
             <div class="col-md-4">
-                <div class="mb-3">
-                    <label for="" class="form-label text-success">Seller Name</label>
+                <div class="mb-4">
+                    <label for="" class="form-label text-success">User Name</label>
                     <input type="text" placeholder="Name" autocomplete="off" runat="server" id="SNameTb" class="form-control"/>
                 </div>
-                <div class="mb-3">
-                    <label for="" class="form-label text-success">Seller Email</label>
-                    <input type="email" placeholder="Seller's Email" autocomplete="off" runat="server" id="EmailTb" class="form-control"/>
+                <div class="mb-4">
+                    <label for="" class="form-label text-success">User Email</label>
+                    <input type="email" placeholder="User Email" autocomplete="off" runat="server" id="EmailTb" class="form-control"/>
                 </div>
-                <div class="mb-3">
-                    <label for="" class="form-label text-success">Seller Phone</label>
+                <div class="mb-4">
+                    <label for="" class="form-label text-success">User Phone</label>
                     <input type="text" placeholder="Phone Number" autocomplete="off" runat="server" id="PhoneTb" class="form-control"/>
                 </div>
-                <div class="mb-3">
-                    <label for="" class="form-label text-success">Seller Address</label>
-                    <input type="text" placeholder="Address" autocomplete="off" runat="server" id="AddressTb" class="form-control"/>
-                </div>   
+                <div class="mb-4">
+                    <label for="" class="form-label text-success">User Password</label>
+                    <input type="text" placeholder="Password" autocomplete="off" runat="server" id="PasswordTb" class="form-control"/>
+                </div> 
                 <div class="row">
                     <asp:Label runat = "server" ID="ErrMsg" class="text-danger text-center"></asp:Label>
                     <div class="col d-grid"><asp:Button Text="Update" id ="Editbtn"  runat="server" CssClass="btn-warning btn-block btn" OnClick="Editbtn_Click"/></div>

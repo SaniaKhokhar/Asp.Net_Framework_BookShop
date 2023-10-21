@@ -26,7 +26,6 @@ namespace BookShop.Models
         {
             dt = new DataTable();
             sda = new SqlDataAdapter(Query, ConStr);
-            //int ra = sda.Fill(dt);
             sda.Fill(dt);
             return dt;
         }
